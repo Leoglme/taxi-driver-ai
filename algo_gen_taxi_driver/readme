@@ -1,0 +1,87 @@
+🚖 Taxi Driver AI - Optimisé
+Ce projet implémente un agent intelligent pour l’environnement Taxi-v3 de Gymnasium (anciennement OpenAI Gym). L’agent est entraîné à l’aide d’un algorithme génétique combiné à un réseau neuronal récurrent GRU. Une interface graphique simple sous Tkinter vous permet de suivre l’entraînement en temps réel, puis de tester l’agent entraîné.
+
+✨ Fonctionnalités
+🧠 Réseau neuronal GRU pour mémorisation des états
+
+🧬 Algorithme génétique avec mutation et croisement
+
+🎯 Fonction de fitness personnalisée basée sur la distance de Manhattan
+
+📈 Visualisation de l’apprentissage génération par génération
+
+🧪 Phase de test en mode graphique (render_mode="human")
+
+🖥️ Interface Tkinter pour une expérience utilisateur simple et claire
+
+🧩 Prérequis
+Assurez-vous d’avoir installé les dépendances suivantes :
+
+bash
+Copier
+pip install torch gymnasium numpy
+Tkinter est généralement déjà installé avec Python. Sinon :
+
+Sur Debian/Ubuntu : sudo apt-get install python3-tk
+
+Sur Windows : intégré par défaut
+
+🚀 Lancement
+Pour lancer le projet :
+
+bash
+Copier
+python taxi_driver_ai.py
+Une fenêtre Tkinter s’ouvrira, affichant l’évolution de l’entraînement de l’agent. Une fois terminé, l’agent sera testé en direct dans un environnement graphique.
+
+🧠 Architecture du code
+1. Réseau neuronal RNNNet
+Entrée : état normalisé (position taxi, position passager, destination)
+
+Traitement : couche GRU + couche linéaire
+
+Sortie : logits pour les 6 actions disponibles
+
+2. Individu génétique Individual
+Chaque individu possède un modèle neuronal
+
+Évaluation basée sur le score cumulé sur plusieurs épisodes
+
+3. Algorithme génétique
+Sélection des meilleurs
+
+Croisement (moyenne des poids)
+
+Mutation (ajout bruit gaussien)
+
+Répétition sur plusieurs générations
+
+4. Environnement Taxi-v3
+Objectif : prendre un passager et le déposer à sa destination
+
+Complexité : 500 états, 6 actions, récompenses faibles => apprentissage délicat
+
+5. Interface graphique TaxiApp
+Affiche les scores en temps réel
+
+Lance automatiquement un test après l’entraînement
+
+🧪 Exemple de test
+Une fois l’entraînement terminé :
+
+Un test en direct est lancé dans l’environnement Taxi-v3
+
+Les actions de l’agent sont affichées dans une fenêtre graphique
+
+Résultat : l’agent effectue sa mission efficacement
+
+📎 Notes techniques
+Normalisation des entrées pour le réseau
+
+Récompenses ajustées manuellement pour guider l’apprentissage :
+
+✅ +30 pour un bon pickup
+
+📉 -50 pour des actions inutiles
+
+🔁 -100 pour des états trop souvent visités
