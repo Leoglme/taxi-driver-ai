@@ -6,6 +6,9 @@ Ce module contient une implémentation d’un **agent Monte Carlo** pour résoud
 
 L’algorithme Monte Carlo est une méthode **model-free** d’apprentissage par renforcement, qui se base sur l’expérience **complète d’un épisode** (du début à la fin) pour mettre à jour les estimations des valeurs d’action (**Q-values**).
 
+Monte Carlo apprend à la fin de l’épisode.
+Il regarde tout ce qu’il s’est passé et calcule la récompense totale reçue pour chaque action prise.
+
 Contrairement au Q-Learning (qui met à jour à chaque étape), Monte Carlo :
 - **observe la totalité de l’épisode**,
 - **calcule le retour total `G`** pour chaque (état, action),

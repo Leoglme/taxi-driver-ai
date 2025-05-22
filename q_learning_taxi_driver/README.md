@@ -6,6 +6,10 @@ Ce module implémente un **agent basé sur l’algorithme de Q-Learning** pour r
 
 Le Q-Learning est un algorithme **model-free off-policy** d’apprentissage par renforcement. Il permet à un agent d’apprendre à partir de son environnement en mettant à jour une **Q-table** (table des valeurs d’action) à chaque interaction.
 
+Le Q-Learning apprend au fur et à mesure, étape par étape.
+À chaque action, il met à jour la Q-table immédiatement en estimant la meilleure récompense future possible.
+
+
 ### 🔁 Logique de mise à jour :
 À chaque étape, on met à jour la Q-table selon la formule :
 

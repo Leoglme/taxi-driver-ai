@@ -1,0 +1,9 @@
+- slide expliqué chaque algo, sarsa etc
+- explication ref learning
+- expliqué qtable
+- dire dans le bootstratp l'algo le plus outil (exemple rec monté carlo) pour montré que c'est pas forcément le même algo worth etc
+- graphique perf et metric de chaque algo et temps entrainements.
+- avantage / inconvénient de chaque algo
+- récap du plus rapide et du plus performant et plus worth / renta
+- varier les paramètre de chaque model
+- Deep Q-Learning
