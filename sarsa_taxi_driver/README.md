@@ -28,11 +28,19 @@ où :
 - `episodes = 50 000`
 - `max_steps = 200` par épisode
 
+## 📊 Analyse de l'entraînement
+
+- L’agent commence en explorant largement grâce à un epsilon élevé.
+- Grâce à l’epsilon decay, il apprend progressivement à **exploiter les actions les plus rentables**.
+- Vers la fin de l’apprentissage, epsilon est proche de 0.01, ce qui signifie que l’agent **agit presque toujours selon ce qu’il a appris**.
+- Lors des tests, l’agent atteint sa destination dans la majorité des cas en un nombre réduit d’étapes.
+- Cela confirme que la **Q-table a convergé vers une politique efficace**.
+- Le choix d’un `discount_factor` élevé (0.99) permet à l’agent de planifier à long terme et maximiser la récompense finale (+20).
+
 ## 🏁 Résultats
 
-- L’agent apprend progressivement à atteindre l’objectif.
-- Epsilon décroît au fil des épisodes, ce qui permet de passer de l’exploration à l’exploitation.
 - L’agent réussit de plus en plus de trajets vers la fin de l’entraînement.
+- Epsilon décroît au fil des épisodes, ce qui permet de passer de l’exploration à l’exploitation.
 - Le test final avec rendu graphique montre que l’agent accomplit la mission dans la plupart des cas.
 
 ## ▶️ Exécution
